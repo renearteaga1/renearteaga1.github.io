@@ -24,4 +24,13 @@ window.addEventListener('scroll', () => {
     document.querySelector('.flecha').style.transform = 'rotate(180deg)';
   }
 
+  if (Math.ceil(scrolled) > scrollable*0.5) {
+    console.log('> mitad');
+    document.querySelector('.preambule__text').classList.add('d-none');
+  }
+  if (Math.ceil(scrolled) < scrollable*0.5) {
+    console.log('> mitad');
+    document.querySelector('.preambule__text').classList.remove('d-none');
+  }
+
 })

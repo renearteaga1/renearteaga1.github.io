@@ -1,0 +1,21 @@
+window.addEventListener('scroll', () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = window.scrollY;
+
+  document.querySelector('.hero-color').classList.add('animate');
+  document.querySelector('.hero-title').classList.add('scrolled-title');
+  document.querySelector('.preambule__text').classList.add('show');
+
+  document.querySelector('.bio-element').style.transform = 'translateY('+(((scrolled/scrollable)*100)-69)+'%)';
+  // console.log(document.querySelector('.bio-element').style.transform('translateY'))
+  if (Math.ceil(scrolled) < 55) {
+    console.log('inicio');
+    document.querySelector('.hero-color').classList.remove('animate');
+    document.querySelector('.hero-title').classList.remove('scrolled-title');
+    document.querySelector('.preambule__text').classList.remove('show');
+  }
+  // console.log(scrolled);
+  if (Math.ceil(scrolled) === scrollable) {
+    console.log('fondo');
+  }
+})
